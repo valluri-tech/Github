@@ -1,0 +1,120 @@
+GIT DOCUMENTATION : https://git-scm.com/docs/
+https://www.tutorialspoint.com/git
+
+git-revert - Revert some existing commits
+git-checkout - Switch branches or restore working tree files
+git-stash - Stash the changes in a dirty working directory away
+
+-------------------------------GITHUB.com---------------------------------------------
+echo "# Web" >> README.md
+git init
+git add README.md
+git status
+git commit -m "first commit"
+Add the remote : git remote add origin https://github.com/satya-valluri/XYZ.git
+git push -u origin master
+git rm -r --cached ReactWebSite/context/src/LoginButton.js : To remove a file from the staging area.
+git reset HEAD :  .By mistake if git ignore is not there.. all node_module files will be in the staging area.. reset the staging area using this command
+---
+echo "# Exp" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/satya-valluri/Exp.git
+git push -u origin master
+---------------------------------------------------------------------------------------
+
+1. Tell Git who you are.
+$ git config --global user.name "Satya Valluri"
+$ git config --global user.email "prakash4455@gmail.com"
+
+2. Remove files from the staging Area.
+$ git rm --cached index.html
+
+3. Add files to staging area.
+$ git add .
+
+4. Add all html files to staging area.
+$ git add *.html
+
+5. add contents of a particular folder to the staging area.
+$ git add ./dir1
+
+TIP :
+If you have edited a file after adding to staging area..
+enter the command $git status.It will also tag the edited file as modified.
+now enter $git add . and check the status.
+
+6. Add a .gitignore and just type in all names of the files & directories you want to ignore
+/dir1 - dir1 and its contents will be ignored
+*.txt - all text files will be ignored.
+
+7. Branching
+
+    Create a new branch.
+    $ git branch login
+
+    Switch branch.
+    $ git checkout login
+
+    -Add files and do changes.
+
+    Switch back to master branch to see old changes.
+    git checkout master
+
+    Merge your changes from login branch to master branch :
+    $ git merge login
+
+8. Working with Remote repository.
+
+    # A remote repository called 'origin' which is located at 'https://github.com/s....'
+    # origin is a short name created by git for you to refer to your remote repo
+    $ git remote add <name> <url>.
+    $ git remote add origin https://github.com/satya-valluri/Exp.git
+
+    # Now list the origin URL
+    $ git remote -v
+    origin  https://github.com/satya-valluri/Exp.git (fetch)
+    origin  https://github.com/satya-valluri/Exp.git (push)
+
+9. Push local commits to the remote repository.
+    $ git push -u origin master
+
+10. Clone
+
+    # create a new directory and go to that directory
+    # Create a folder
+    # cd to the folder
+    # git init
+    $ git clone https://github.com/satya-valluri/Exp.git
+
+11. pull- bring a repo locally / get latest changes
+$ git pull https://github.com/satya-valluri/Exp.git
+
+
+12. MISC
+
+$ git ls-remote
+From https://github.com/satya-valluri/Exp.git
+7282e90d0e24a4c5a267f2d2fc3311afa0bc1f96        HEAD
+7282e90d0e24a4c5a267f2d2fc3311afa0bc1f96        refs/heads/master
+
+13. diff
+
+git diff HEAD : show differences between working directory and the last commit
+git diff --cached : show differences between staged changes and last commit.
+
+14. Remove a file from the staging area
+$ git reset HEAD index.html
+
+15. Restore working tree files.[To discard changes of a file in the working directory]
+$ git checkout -- index.html
+
+16. Download only a particular folder from GIT REPO
+
+    $ git init
+    $ git config core.sparsecheckout true
+    $ echo DirectoryName >> .git/info/sparse-checkout
+    $ git remote add -f origin ttps://github.com/satya-valluri/Exp.git
+    $ git pull origin master
+    #With the above command only the required folder will be downloaded.
