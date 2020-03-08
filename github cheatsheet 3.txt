@@ -1,0 +1,9 @@
+1. If you have done some changes from your home computer and want to ignore the changes you have done in office PC and continue from the changes pushed from home computer.
+
+> git fetch origin master
+> git reset --hard origin/master 
+
+
+git fetch : downloads the latest from remote without trying to merge or re-base anything.
+
+git reset : This command resets the master branch to what you jsut fetched. probably the HEAD will point to what you just pulled.
